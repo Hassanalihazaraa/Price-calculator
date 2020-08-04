@@ -29,3 +29,5 @@ class CustomerModel
         return $this->groupId;
     }
 }
+
+echo 'hello world';
