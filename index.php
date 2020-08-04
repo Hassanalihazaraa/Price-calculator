@@ -17,4 +17,3 @@ function openConnection(): PDO
 
 $pdo = openConnection();
 
-require_once 'View/Calculator.view.php';
