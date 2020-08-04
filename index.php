@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
 
+require_once 'Controller/Calculator.controller.php';
+require_once 'Model/Customer.model.php';
+require_once 'Model/CustomerGroup.model.php';
+require_once 'Model/Product.model.php';
+
 //database connection
 function openConnection(): PDO
 {
@@ -14,6 +19,7 @@ function openConnection(): PDO
 
     return new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
 }
-
 $pdo = openConnection();
 
+$controller = new CalculatorController();
+$controller->render();
