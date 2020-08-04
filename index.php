@@ -4,8 +4,6 @@ declare(strict_types=1);
 //database connection
 function openConnection(): PDO
 {
-    // No bugs in this function, just use the right credentials.
-
     $driverOptions = [
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
