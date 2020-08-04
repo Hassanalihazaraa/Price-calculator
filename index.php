@@ -10,9 +10,11 @@ function openConnection(): PDO
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
 
-    require_once 'credentials.php';
+    require_once 'hiddenResources/credentials.php';
 
     return new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
 }
 
 $pdo = openConnection();
+
+require_once 'View/Calculator.view.php';
