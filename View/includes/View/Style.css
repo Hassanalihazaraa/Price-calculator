@@ -1,0 +1,14 @@
+body {
+  background-color: aqua;
+}
+
+#jumbotron {
+  font-family: 'Anton', sans-serif;
+}
+
+.price {
+  background-color: aquamarine;
+  height: 50px;
+}
+
+

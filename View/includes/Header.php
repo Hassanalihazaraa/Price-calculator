@@ -2,46 +2,27 @@
 declare(strict_types=1);
 ?>
 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link href="../Style.css" rel="stylesheet" type="text/css">
+
+
+
+    <title>Hello, world!</title>
 </head>
 <body>
-<header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-            </a>
-
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-            </div>
-                </div>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-danger is-light">
-                            Log in
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-</header>
+<div class="jumbotron jumbotron-fluid bg-info " id="jumbotron">
+    <div class="container">
+        <h1 class="display-4 justify-content-center font-weight-bold">The B2B Utilities webshop.</h1>
+        <h2 class="font-weight-light text-light">Calculate the price of your utilities here.</h2>
+    </div>
+</div>
