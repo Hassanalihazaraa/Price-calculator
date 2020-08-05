@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 
 //database connection
-class database
+class DatabaseConnection
 {
     private PDO $database;
 
@@ -15,42 +15,11 @@ class database
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,];
 
-        $this->database = PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
+        $this->database = new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
     }
 
-    //fetchAll customer from database
-    public function getAllCustomers()
+    public function getDatabase(): PDO
     {
-        $handle = $this->database->prepare('SELECT * FROM customer');
-        $handle->execute();
-        $customers = [];
-        foreach ($handle->fetchAll() as $customer) {
-            $customers = new Customer((int)$customer['id'], (string)$customer['firstName'], (string)$customer['lastName'], (int)$customer['group_id'], (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
-        }
-        return $customers;
-    }
-
-    //fetchAll customerGroup
-    public function getAllCustomerGroup()
-    {
-        $handle = $this->database->prepare('SELECT * FROM customer_group');
-        $handle->execute();
-        $customerGroups = [];
-        foreach ($handle->fetchAll() as $customerGroup) {
-            $customerGroups = new CustomerGroup((int)$customerGroup['id'], (string)$customerGroup['name'], (int)$customerGroup['parent_id'], (int)$customerGroup['fixed_discount'], (int)$customerGroup['variable_discount']);
-        }
-        return $customerGroups;
-    }
-
-    //fetchAll Product
-    public function getAllProduct()
-    {
-        $handle = $this->database->prepare('SELECT * FROM product');
-        $handle->execute();
-        $products = [];
-        foreach ($handle->fetchAll() as $product) {
-            $products = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
-        }
-        return $products;
+        return $this->database;
     }
 }
