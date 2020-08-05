@@ -29,4 +29,17 @@ class database
         }
         return $customers;
     }
+
+
+    //fetchAll customerGroup
+    public function getAllCustomerGroup()
+    {
+        $handle = $this->database->prepare('SELECT * FROM customer_group');
+        $handle->execute();
+        $customerGroup = [];
+        foreach ($handle->fetchAll() as $customerGroup) {
+            $customerGroup = new CustomerGroup((int)$customerGroup['id'], (string)$customerGroup['name'], (int)$customerGroup['parent_id'], (int)$customerGroup['fixed_discount'], (int)$customerGroup['variable_discount']);
+        }
+        return $customerGroup;
+    }
 }
