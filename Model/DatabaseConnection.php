@@ -35,11 +35,11 @@ class database
     {
         $handle = $this->database->prepare('SELECT * FROM customer_group');
         $handle->execute();
-        $customerGroup = [];
+        $customerGroups = [];
         foreach ($handle->fetchAll() as $customerGroup) {
-            $customerGroup = new CustomerGroup((int)$customerGroup['id'], (string)$customerGroup['name'], (int)$customerGroup['parent_id'], (int)$customerGroup['fixed_discount'], (int)$customerGroup['variable_discount']);
+            $customerGroups = new CustomerGroup((int)$customerGroup['id'], (string)$customerGroup['name'], (int)$customerGroup['parent_id'], (int)$customerGroup['fixed_discount'], (int)$customerGroup['variable_discount']);
         }
-        return $customerGroup;
+        return $customerGroups;
     }
 
     //fetchAll Product
