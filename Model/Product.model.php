@@ -3,9 +3,8 @@ declare(strict_types=1);
 
 class ProductModel
 {
-    private int $id;
+    private int $id, $price;
     private string $name;
-    private int $price;
 
     public function __construct(int $id, string $name, int $price)
     {
@@ -19,13 +18,13 @@ class ProductModel
         return $this->id;
     }
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
     public function getPrice(): int
     {
         return $this->price;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 }
