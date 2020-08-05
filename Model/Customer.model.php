@@ -1,17 +1,23 @@
 <?php
 declare(strict_types=1);
 
-class CustomerModel
+class Customer
 {
     private int $id;
-    private string $name;
+    private string $firstName;
+    private string $lastName;
     private int $groupId;
+    private int $fixedDiscount;
+    private int $variableDiscount;
 
-    public function __construct(int $id, string $name, int $groupId)
+    public function __construct(int $id, string $firstName, string $lastName, int $groupId, int $fixedDiscount, int $variableDiscount)
     {
         $this->id = $id;
-        $this->name = $name;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->groupId = $groupId;
+        $this->fixedDiscount = $fixedDiscount;
+        $this->variableDiscount = $variableDiscount;
     }
 
     public function getId(): int
@@ -19,13 +25,28 @@ class CustomerModel
         return $this->id;
     }
 
-    public function getName(): string
+    public function getFirstName(): string
     {
-        return $this->name;
+        return $this->firstName;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
     }
 
     public function getGroupId(): int
     {
         return $this->groupId;
+    }
+
+    public function getFixedDiscount(): int
+    {
+        return $this->fixedDiscount;
+    }
+
+    public function getVariableDiscount(): int
+    {
+        return $this->variableDiscount;
     }
 }

@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-class ProductModel
+class Product
 {
     private int $id;
     private string $name;
-    private int $price;
+    private int  $price;
 
     public function __construct(int $id, string $name, int $price)
     {
