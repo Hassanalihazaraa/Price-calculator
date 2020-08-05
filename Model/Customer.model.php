@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class CustomerModel
+class Customer
 {
     private int $id;
     private string $firstName;
