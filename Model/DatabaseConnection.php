@@ -30,7 +30,6 @@ class database
         return $customers;
     }
 
-
     //fetchAll customerGroup
     public function getAllCustomerGroup()
     {
@@ -54,5 +53,4 @@ class database
         }
         return $products;
     }
-
 }
