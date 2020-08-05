@@ -1,11 +1,9 @@
-<footer class="page-footer font-small fixed-bottom bg-dark text-light">
+<footer class="page-footer font-small fixed-bottom bg-custom text-light">
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-   Hassan & Yoann for Becode.org</a>
-
-    </div>
-    <!-- Copyright -->
+        <div class="container copyright">
+            <span class="left">© Price calculator by Hassan & Yoann </span>
+            <button type="button" class="btn btn-danger right float-right">Log in</button>
+        </div>
 
 </footer>
 

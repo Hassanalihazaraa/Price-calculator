@@ -1,6 +1,8 @@
 <?php require 'includes/Header.php' ?>
 
-<section class="container">
+
+
+<section class="container" id="toggle">
     <form method="post">
         <div class="input-group mb-3">
             <select name="productId" class="custom-select">
@@ -22,10 +24,13 @@
 </section>
 
 <section class="container" id="price">
-    Your price is <?php ?>
+</br>
+</br>
+    <h1>Your price is <?php ?></h1>
 </section>
 
 <?php require 'includes/Footer.php' ?>
+
 
 
 
