@@ -17,4 +17,16 @@ class database
 
         $this->database = PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
     }
+
+    //fetchAll customer from database
+    public function getAllCustomers()
+    {
+        $handle = $this->database->prepare('SELECT * FROM customer');
+        $handle->execute();
+        $customers = [];
+        foreach ($handle->fetchAll() as $customer) {
+            $customers = new Customer((int)$customer['id'], (string)$customer['firstName'], (string)$customer['lastName'], (int)$customer['group_id'], (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
+        }
+        return $customers;
+    }
 }
