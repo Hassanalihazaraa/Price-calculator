@@ -42,4 +42,17 @@ class database
         }
         return $customerGroup;
     }
+
+    //fetchAll Product
+    public function getAllProduct()
+    {
+        $handle = $this->database->prepare('SELECT * FROM product');
+        $handle->execute();
+        $products = [];
+        foreach ($handle->fetchAll() as $product) {
+            $products = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
+        }
+        return $products;
+    }
+
 }
