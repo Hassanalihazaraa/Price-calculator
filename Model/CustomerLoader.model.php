@@ -7,14 +7,11 @@ class CustomerLoader extends DatabaseConnection
 
     public function __construct()
     {
-        //fetchAll customer from database
-        $handle = $this->getDatabase()->prepare('SELECT * FROM customer');
+        $handle = $this->connect()->prepare('SELECT * FROM customer');
         $handle->execute();
-        $customers = [];
         foreach ($handle->fetchAll() as $customer) {
-            $customers = new Customer((int)$customer['id'], (string)$customer['firstName'], (string)$customer['lastName'], (int)$customer['group_id'], (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
+            $this->customers[] = new Customer((int)$customer['id'], (string)$customer['firstname'], (string)$customer['lastname'], (int)$customer['group_id'], (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
         }
-        return $customers;
     }
 
     public function getCustomers(): array

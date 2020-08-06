@@ -8,13 +8,11 @@ class ProductLoader extends DatabaseConnection
     public function __construct()
     {
         //fetchAll Product
-        $handle = $this->getDatabase()->prepare('SELECT * FROM product');
+        $handle = $this->connect()->prepare('SELECT * FROM product');
         $handle->execute();
-        $products = [];
         foreach ($handle->fetchAll() as $product) {
-            $products = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
+            $this->products[] = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
         }
-        return $products;
     }
 
     public function getProducts(): array
