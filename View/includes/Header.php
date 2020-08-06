@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,16 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
           integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link href="View/Style.css" rel="stylesheet" type="text/css">
-
     <title>Utilities Price Calculator</title>
-
-<style>
-
-
-</style>
 </head>
-
-
 <body>
 <div class="jumbotron jumbotron-fluid bg-custom" id="jumbotron">
     <div class="container">

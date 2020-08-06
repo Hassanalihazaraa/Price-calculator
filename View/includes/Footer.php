@@ -1,10 +1,8 @@
 <footer class="page-footer font-small fixed-bottom bg-custom text-light">
-
         <div class="container copyright">
             <span class="left">© Price calculator by Hassan & Yoann </span>
             <button type="button" class="btn btn-danger right float-right">Log in</button>
         </div>
-
 </footer>
 
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
