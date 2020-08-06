@@ -3,17 +3,14 @@ declare(strict_types=1);
 
 class CalculatorController
 {
-    private array $customer;
-    private array $customerGroup;
-    private array $products;
-
-    public function __construct()
+    public function render(): void
     {
+        $getCustomers = new CustomerLoader();
+        $customers = $getCustomers->getCustomers();
 
-    }
+        $getProducts = new ProductLoader();
+        $products = $getProducts->getProducts();
 
-    public function render()
-    {
-        require_once 'View/Calculator.view.php';
+        require_once 'View/Homepage.php';
     }
 }
