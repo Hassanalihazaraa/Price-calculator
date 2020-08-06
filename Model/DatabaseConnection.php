@@ -1,25 +1,23 @@
 <?php
 declare(strict_types=1);
 
-
-//database connection
 class DatabaseConnection
 {
-    private PDO $database;
-
-    public function __construct()
+    public function connect()
     {
-        require_once '../hiddenResources/credentials.php';
+        try {
+            $databaseHost = "localhost";
+            $databaseUser = "root";
+            $databasePassword = "bU6H99%!";
+            $databaseName = "price_calculator";
 
-        $driverOptions = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,];
-
-        $this->database = new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
-    }
-
-    public function getDatabase(): PDO
-    {
-        return $this->database;
+            $driverOptions = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,];
+            //echo 'Connected successfully';
+            return new PDO('mysql:host=' . $databaseHost . ';dbname=' . $databaseName, $databaseUser, $databasePassword, $driverOptions);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
     }
 }
