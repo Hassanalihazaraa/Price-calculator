@@ -1,14 +1,11 @@
-<<<<<<< Updated upstream
-<footer class="page-footer font-small fixed-bottom bg-custom text-light">
-=======
 <footer class="page-footer font-small fixed-bottom bg-custom text-dark">
 
->>>>>>> Stashed changes
         <div class="container copyright">
             <span class="left">© Price calculator by Hassan & Yoann </span>
-            <a class="btn btn-warning right float-right" href="View/Login.php" role="button">Log in</a>
+            <a class="btn btn-warning right float-right" href="../index.php" role="button">Calculator</a>
 
         </div>
+
 </footer>
 
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>

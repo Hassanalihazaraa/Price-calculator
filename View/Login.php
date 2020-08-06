@@ -22,7 +22,7 @@ require 'includes/Header.php';
 </div>
 
 <?php
-require 'includes/Footer.php';
+require 'includes/Footer_login.php';
 ?>
 
 
