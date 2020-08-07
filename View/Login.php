@@ -3,22 +3,23 @@ declare(strict_types=1);
 require 'includes/Header.php';
 ?>
 
-<div class="jumbotron jumbotron-fluid" id="login">
-    <div class="container">
-        <section class="container">
-            <form method="post">
-                <div class="input-group mb-3">
-                    </select>
-                    <select name="customerId" class="custom-select">
-                        <option selected disabled value="">Your name</option>
-                    </select>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit">Log in</button>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </div>
+<style>
+
+    }
+</style>
+
+    <div class="container" id="login">
+        <form method="post">
+            <div class="form-group">
+                <label for="firstname">Your first name here</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname" >
+            </div>
+            <div class="form-group">
+                <label for="lastname">Your last name here</label>
+                <input type="text" class="form-control" id="lastname" name="lastname"placeholder="Lastname">
+            </div>
+            <button type="submit" class="btn btn-warning">Log in</button>
+        </form>
 </div>
 
 <?php

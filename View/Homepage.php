@@ -38,7 +38,7 @@
 <section class="container" id="price">
     </br>
     </br>
-    <h1>Your price is <?php ?></h1>
+    <h1>Your price is </br><?php echo $displayDiscountedPrice; ?></h1>
 </section>
 
 <?php require 'includes/Footer.php' ?>

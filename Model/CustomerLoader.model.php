@@ -9,8 +9,11 @@ class CustomerLoader extends DatabaseConnection
     {
         $handle = $this->connect()->prepare('SELECT * FROM customer');
         $handle->execute();
+        $customerGroupLoader = new CustomerGroupLoader();
+        $customerGroupLoader->getCustomerGroup();
         foreach ($handle->fetchAll() as $customer) {
-            $this->customers[] = new Customer((int)$customer['id'], (string)$customer['firstname'], (string)$customer['lastname'], (int)$customer['group_id'], (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
+            $customerGroup = $customerGroupLoader[$customer['group_id']];
+            $this->customers[$customer['id']] = new Customer((int)$customer['id'], (string)$customer['firstname'], (string)$customer['lastname'],$customerGroup, (int)$customer['fixed_discount'], (int)$customer['variable_discount']);
         }
     }
 

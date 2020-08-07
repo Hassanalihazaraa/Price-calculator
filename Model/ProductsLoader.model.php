@@ -11,7 +11,7 @@ class ProductLoader extends DatabaseConnection
         $handle = $this->connect()->prepare('SELECT * FROM product');
         $handle->execute();
         foreach ($handle->fetchAll() as $product) {
-            $this->products[] = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
+            $this->products[$product['id']] = new Product((int)$product['id'], (string)$product['name'], (int)$product['price']);
         }
     }
 

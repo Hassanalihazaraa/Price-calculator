@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 class DatabaseConnection
 {
-    public function connect()
+    public function connect(): PDO
     {
         try {
             $databaseHost = "localhost";
-            $databaseUser = "root";
-            $databasePassword = "bU6H99%!";
+            $databaseUser = "yoann";
+            $databasePassword = "yoann";
             $databaseName = "price_calculator";
 
             $driverOptions = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
